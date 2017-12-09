@@ -8,4 +8,5 @@ jobs:
       - checkout
       - run:
           command: |
-            docker build -t my-cloud-sdk-docker:default .
+            docker build -t mmosttler/circleci_openjdk_gcloud:0.0.1 .
+            docker push mmosttler/circleci_openjdk_gcloud:0.0.1
