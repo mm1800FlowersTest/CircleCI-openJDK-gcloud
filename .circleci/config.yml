@@ -12,4 +12,4 @@ jobs:
       - checkout
       - run:
           command: |
-            docker build -t my-cloud-sdk-docker:default
+            docker build -t my-cloud-sdk-docker:default .
