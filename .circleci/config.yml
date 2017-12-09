@@ -9,4 +9,5 @@ jobs:
       - run:
           command: |
             docker build -t mmosttler/circleci_openjdk_gcloud:0.0.1 .
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push mmosttler/circleci_openjdk_gcloud:0.0.1
