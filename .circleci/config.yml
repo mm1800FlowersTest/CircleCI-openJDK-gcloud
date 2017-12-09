@@ -10,3 +10,6 @@ jobs:
     steps:
        # Get the code    
       - checkout
+      - run:
+          command: |
+            docker build -t my-cloud-sdk-docker:default
