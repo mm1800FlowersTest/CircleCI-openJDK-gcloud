@@ -10,7 +10,7 @@ RUN echo ${PATH}
 RUN ls -al
 RUN ls -al /home
 RUN cd /home/circleci
-RUN ls -al
+RUN ls -al .
 
 RUN ls -al /opt
  
@@ -37,7 +37,7 @@ CMD ["/bin/bash"]
 
 RUN ls -al /
 #RUN sudo mkdir /.config 777
-RUN sudo /.config 777
+RUN sudo chmod /.config 777
 RUN ls -al .
 
 RUN gcloud info
