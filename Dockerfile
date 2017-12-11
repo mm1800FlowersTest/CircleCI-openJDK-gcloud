@@ -9,9 +9,14 @@ FROM circleci/openjdk:8u151-jdk
 ENV HOME /
 ENV CLOUDSDK_PYTHON_SITEPACKAGES 1
 
+RUN echo ${PATH}
+
 RUN ls
 RUN ls -al /home
 RUN ls -al /usr
+RUN ls -al /usr/bin
+RUN ls -al /usr/local
+
 ENV CLOUD_SDK_VERSION 181.0.0
 
 ENV PATH /google-cloud-sdk/bin:$PATH
