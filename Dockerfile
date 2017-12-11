@@ -9,10 +9,6 @@ FROM circleci/openjdk:8u151-jdk
 ENV HOME /
 ENV CLOUDSDK_PYTHON_SITEPACKAGES 1
 
-RUN docker version
-RUN docker info
-RUN uname -a
-
 RUN ls
 
 RUN curl -o google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip
