@@ -11,7 +11,7 @@ ENV CLOUDSDK_PYTHON_SITEPACKAGES 1
 
 RUN ls
 RUN ls -al /home
-
+RUN ls -al /usr
 ENV CLOUD_SDK_VERSION 181.0.0
 
 ENV PATH /google-cloud-sdk/bin:$PATH
