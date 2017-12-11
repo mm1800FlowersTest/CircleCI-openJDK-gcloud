@@ -1,7 +1,8 @@
 FROM circleci/openjdk:8u151-jdk
 
 # Install the Google Cloud SDK.
-ENV HOME /
+#ENV HOME /
+ENV HOME /home/circleci
 ENV CLOUDSDK_PYTHON_SITEPACKAGES 1
 
 ENV PATH /opt/google-cloud-sdk/bin:$PATH
@@ -29,14 +30,14 @@ RUN sudo sed -i -- 's/\"disable_updater\": false/\"disable_updater\": true/g' /o
 #VOLUME ["/.config"]
 CMD ["/bin/bash"]
 
-RUN ls -al /
-RUN sudo mkdir /.config
+#RUN ls -al /
+#RUN sudo mkdir /.config
 RUN ls -al .
-RUN sudo chmod 777 .config
-RUN ls -al .
+#RUN sudo chmod 777 .config
+#RUN ls -al .
 
 RUN gcloud info
 RUN gcloud components list
 
-ENV HOME /home/circleci
+#ENV HOME /home/circleci
 RUN ls -al .
