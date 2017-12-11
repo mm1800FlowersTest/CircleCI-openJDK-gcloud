@@ -37,3 +37,6 @@ RUN ls -al .
 
 RUN gcloud info
 RUN gcloud components list
+
+ENV HOME /home/circleci
+RUN ls -al .
