@@ -30,7 +30,7 @@ RUN sudo sed -i -- 's/\"disable_updater\": false/\"disable_updater\": true/g' /o
 CMD ["/bin/bash"]
 
 RUN ls -al /
-RUN sudo mkdir /.config 777
+RUN sudo mkdir /.config
 RUN ls -al .
 RUN sudo chmod 777 .config
 RUN ls -al .
