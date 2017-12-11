@@ -16,6 +16,9 @@ RUN ls -al /home
 RUN ls -al /usr
 RUN ls -al /usr/bin
 RUN ls -al /usr/local
+RUN ls -al /opt
+
+RUN sudo mkdir /opt/gcloud
 
 ENV CLOUD_SDK_VERSION 181.0.0
 
