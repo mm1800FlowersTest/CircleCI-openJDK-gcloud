@@ -15,7 +15,7 @@ RUN sudo unzip -q -d /opt/. /tmp/google-cloud-sdk.zip
 RUN rm /tmp/google-cloud-sdk.zip
 
 RUN ls -al /opt
-RUN sudo /opt/google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash-completion=true --rc-path=/.bashrc --additional-components app-engine-java app-engine-python app kubectl alpha beta gcd-emulator pubsub-emulator cloud-datastore-emulator app-engine-go bigtable
+RUN sudo /opt/google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash-completion=true --rc-path=/.bashrc --additional-components app-engine-java app-engine-python kubectl alpha beta pubsub-emulator cloud-datastore-emulator
 
 # Disable updater check for the whole installation.
 # Users won't be bugged with notifications to update to the latest version of gcloud.
