@@ -10,6 +10,7 @@ ENV HOME /
 ENV CLOUDSDK_PYTHON_SITEPACKAGES 1
 
 RUN ls
+RUN ls -al /home
 
 ENV CLOUD_SDK_VERSION 181.0.0
 
@@ -22,7 +23,6 @@ RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cl
     gcloud config set component_manager/disable_update_check true && \
     gcloud config set metrics/environment github_docker_image && \
     gcloud --version
-VOLUME ["/root/.config"]
 
 
 
