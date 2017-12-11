@@ -9,6 +9,6 @@ jobs:
       - run:
           name: Build new image and push to docker
           command: |
-            docker build -t mmosttler/circleci_openjdk_gcloud:0.0.1 .
+            docker build -t mmosttler/circleci_openjdk_gcloud:8u151-jdk-gcloud-182 .
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push mmosttler/circleci_openjdk_gcloud:0.0.1
+            docker push mmosttler/circleci_openjdk_gcloud:8u151-jdk-gcloud-182
