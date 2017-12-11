@@ -48,9 +48,10 @@ RUN sudo /opt/google-cloud-sdk/bin/gcloud config set --installation component_ma
 # Changes are lost on a subsequent run.
 RUN sudo sed -i -- 's/\"disable_updater\": false/\"disable_updater\": true/g' /opt/google-cloud-sdk/lib/googlecloudsdk/core/config.json
 
-RUN cd /home/circleci
-RUN gcloud info
 
 #RUN mkdir /.ssh
-#VOLUME ["/.config"]
-#CMD ["/bin/bash"]
+VOLUME ["/.config"]
+CMD ["/bin/bash"]
+
+RUN cd /home/circleci
+RUN gcloud info
