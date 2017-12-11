@@ -11,32 +11,30 @@ ENV CLOUDSDK_PYTHON_SITEPACKAGES 1
 
 RUN echo ${PATH}
 
-RUN ls
+RUN ls -al
 RUN ls -al /home
 RUN ls -al /usr
 RUN ls -al /usr/bin
 RUN ls -al /usr/local
 RUN ls -al /opt
 
-RUN sudo mkdir /opt/gcloud
-
 ENV CLOUD_SDK_VERSION 181.0.0
 
-ENV PATH /google-cloud-sdk/bin:$PATH
-RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
-    tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
-    rm google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
-    ln -s /lib /lib64 && \
-    gcloud config set core/disable_usage_reporting true && \
-    gcloud config set component_manager/disable_update_check true && \
-    gcloud config set metrics/environment github_docker_image && \
-    gcloud --version
+#ENV PATH /google-cloud-sdk/bin:$PATH
+#RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
+#    tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
+#    rm google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
+#    ln -s /lib /lib64 && \
+#    gcloud config set core/disable_usage_reporting true && \
+#    gcloud config set component_manager/disable_update_check true && \
+#    gcloud config set metrics/environment github_docker_image && \
+#    gcloud --version
 
-
-
-#RUN curl -o google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip
-#RUN unzip -q -d . google-cloud-sdk.zip
-#RUN rm google-cloud-sdk.zip
+ 
+RUN curl -o /tmp/google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip
+RUN ls - al /tmp
+RUN sudo unzip -q -d /opt/. /tmp/google-cloud-sdk.zip
+RUN rm /tmp/google-cloud-sdk.zip
 
 #RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip
 RUN ls
