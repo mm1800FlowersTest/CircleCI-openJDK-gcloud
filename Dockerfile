@@ -4,6 +4,11 @@ FROM circleci/openjdk:8u151-jdk
 ENV HOME /home/circleci
 ENV CLOUDSDK_PYTHON_SITEPACKAGES 1
 
+RUN ls -al /usr/lib
+RUN ls -al /usr/lib/google-cloud-sdk
+RUN /usr/lib/google-cloud-sdk/bin/gcloud info
+RUN /usr/lib/google-cloud-sdk/bin/gcloud components list
+
 ENV PATH /opt/google-cloud-sdk/bin:$PATH
 RUN echo ${PATH}
 
