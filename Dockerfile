@@ -12,10 +12,10 @@ ENV CLOUDSDK_PYTHON_SITEPACKAGES 1
 RUN echo ${PATH}
 
 RUN ls -al
-RUN ls -al /home
-RUN ls -al /usr
-RUN ls -al /usr/bin
-RUN ls -al /usr/local
+#RUN ls -al /home
+#RUN ls -al /usr
+#RUN ls -al /usr/bin
+#RUN ls -al /usr/local
 RUN ls -al /opt
 
 ENV CLOUD_SDK_VERSION 181.0.0
@@ -32,12 +32,12 @@ ENV CLOUD_SDK_VERSION 181.0.0
 
  
 RUN curl -o /tmp/google-cloud-sdk.zip https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip
-RUN ls - al /tmp
+RUN ls -al /tmp
 RUN sudo unzip -q -d /opt/. /tmp/google-cloud-sdk.zip
 RUN rm /tmp/google-cloud-sdk.zip
 
 #RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip
-RUN ls
+RUN ls -al /opt
 #RUN unzip google-cloud-sdk.zip
 #RUN rm google-cloud-sdk.zip
 RUN google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash-completion=true --rc-path=/.bashrc --additional-components app-engine-java app-engine-python app kubectl alpha beta gcd-emulator pubsub-emulator cloud-datastore-emulator app-engine-go bigtable
